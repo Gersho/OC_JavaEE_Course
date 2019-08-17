@@ -14,6 +14,9 @@
             %>
         </p>
         
+          <%-- Ceci est un commentaire JSP, non visible dans la page HTML finale.  --%>
+        <!-- Ceci est un simple commentaire HTML. -->
+        
                 <p>
             Récupération du bean :
             <%	
