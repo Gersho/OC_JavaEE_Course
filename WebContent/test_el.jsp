@@ -32,6 +32,8 @@
         <!-- Compare le résultat d'un calcul à une valeur fixe. Ici, 6 x 7 vaut 42 et non pas 48, le résultat est false. -->
         ${ 6 * 7 == 48 } <br /> 
         
+        
+        
         <!-- Vérifications si vide ou null -->
 		${ empty 'test' }  <br /> <!-- La chaîne testée n'est pas vide, le résultat est false -->
 		${ empty '' }  <br /> <!-- La chaîne testée est vide, le résultat est true -->
