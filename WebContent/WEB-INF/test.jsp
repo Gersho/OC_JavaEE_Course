@@ -1,4 +1,5 @@
 <%@ page pageEncoding="UTF-8" %>
+<%@ page import="java.util.List" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -7,22 +8,35 @@
     </head>
     <body>
         <p>Ceci est une page générée depuis une JSP.</p>
+        <p>
+            ${test}
+            ${param.auteur}
+        </p>
+        <p>
+            Récupération du bean :
+            ${coyote.prenom}
+            ${coyote.nom}
+        </p>
+        
                 <p>
-            <% 
-            String attribut = (String) request.getAttribute("test");
-            out.println( attribut );
+            Récupération de la liste :
+            <%
+            List<Integer> liste = (List<Integer>) request.getAttribute( "liste" );
+            for( Integer i : liste ){
+                out.println(i + " : ");	
+            }
             %>
         </p>
         
-          <%-- Ceci est un commentaire JSP, non visible dans la page HTML finale.  --%>
-        <!-- Ceci est un simple commentaire HTML. -->
-        
                 <p>
-            Récupération du bean :
-            <%	
-	    com.sdzee.beans.Coyote notreBean = (com.sdzee.beans.Coyote) request.getAttribute("coyote");
-	    out.println( notreBean.getPrenom() );
-            out.println( notreBean.getNom() );
+            Récupération du jour du mois :
+            <%
+            Integer jourDuMois = (Integer) request.getAttribute( "jour" );
+            if ( jourDuMois % 2 == 0 ){
+                out.println("Jour pair : " + jourDuMois);
+            } else {
+                out.println("Jour impair : " + jourDuMois);
+            }
             %>
         </p>
     </body>
